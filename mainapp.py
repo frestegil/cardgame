@@ -12,9 +12,7 @@ if file != '':
 	selectedCheckboxes = [x for x, z in enumerate(checkboxes) if z == True] 
 	selectedLevels = levels.iloc[selectedCheckboxes]
 	selectedWords = df.merge(selectedLevels, on='niveau')
-# Play
+	# Play
 	words = selectedWords.sample(n=1)
-	print(words)
 	if st.button('New word'):
-		mot = words.at(1,'mot')
-		st.write(mot)
+		st.write(words)
