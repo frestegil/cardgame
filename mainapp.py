@@ -10,7 +10,7 @@ if file != '':
 levels = df.niveau.unique()
 checkboxes = [st.checkbox(l) for l in levels]
 
-selectedCheckboxes = [x for x, z in enumerate(lst) if z == true] 
+selectedCheckboxes = [x for x, z in enumerate(checkboxes) if z == true] 
 
 st.write(selectedCheckboxes)
 st.write(levels.iloc[:,selectedCheckboxes])
