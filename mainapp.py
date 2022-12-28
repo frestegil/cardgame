@@ -18,7 +18,7 @@ if selectedWords.shape[0] > 0:
 	nbWords = 1
 	if st.button('Display a word'):
 		if nbWords < selectedWords.shape[0]:
-			st.write(selectedWords.iloc['mot', nbWords])
+			st.write(selectedWords.loc['mot', nbWords])
 			nbWords = nbWords + 1
 		else:
 			st.write('No more words')
