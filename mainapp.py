@@ -29,6 +29,6 @@ if file != '':
 	st.markdown(f'# {st.session_state.word}')
 	my_bar = st.progress(100)
 	for percent_complete in range(st.session_state.timer):
-    	time.sleep(1)
-    	rem_time = (st.session_state.timer - percent_complete)/st.session_state.timer
-    	my_bar.progress(percent_complete - 1)
+		time.sleep(1)
+		rem_time = (st.session_state.timer - percent_complete)/st.session_state.timer
+		my_bar.progress(percent_complete - 1)
