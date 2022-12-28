@@ -13,15 +13,6 @@ if file != '':
 	selectedLevels = levels.iloc[selectedCheckboxes]
 	selectedWords = df.merge(selectedLevels, on='niveau')
 # Play
-nbWords = st.number_input('Define number of words', format='%d', step=1)
-if nbWords > selectedWords.shape[0]:
-	st.error(f'The number of words must be under {selectedWords.shape[0]}')
-else:
-	nbClicks = 1
-	words = selectedWords.sample(n=nbWords)
-	st.write(words)
-	if st.button('Display a word'):
-		st.write(words.at[nbClicks, 'mot'])
-		nbClicks = nbClicks + 1
-		if nbClicks == nbWords:
-			st.write('No more words')
+	words = selectedWords.sample(n=1)
+	if st.button('New word'):
+		st.write(words[['mot']])
