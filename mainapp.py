@@ -13,7 +13,7 @@ def new_word_click(words, timer):
 st.title('Card game')
 file = st.file_uploader('Select file to upload')
 if 'word' not in st.session_state:
-st.session_state.word=''
+	st.session_state.word=''
 if file != '':
 	df = pd.read_csv(file, sep=";")
 	# st.write (df.head())
