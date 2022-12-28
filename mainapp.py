@@ -24,5 +24,3 @@ else:
 		nbClicks = nbClicks + 1
 		if nbClicks == nbWords:
 			st.write('No more words')
-else:
-	st.write('No words selected')
