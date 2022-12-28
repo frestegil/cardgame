@@ -23,7 +23,7 @@ if file != '':
 	selectedCheckboxes = [x for x, z in enumerate(checkboxes) if z == True] 
 	selectedLevels = levels.iloc[selectedCheckboxes]
 	selectedWords = df.merge(selectedLevels, on='niveau')
-	timer = st.slider("Select a timer",5, 30)
+	timer = st.slider("Select a timer",5, 60)
 	# Play
 	st.button('New word', on_click = new_word_click, args = (selectedWords, timer))
 	st.info(f'{st.session_state.word}')
