@@ -8,6 +8,7 @@ if file != '':
 	df = pd.read_csv(file, sep=";")
 	# st.write (df.head())
 levels = df.niveau.unique()
+levels = pd.DataFrame({"niveau":levels})
 checkboxes = [st.checkbox(l) for l in levels]
 
 selectedCheckboxes = [x for x, z in enumerate(checkboxes) if z == True] 
