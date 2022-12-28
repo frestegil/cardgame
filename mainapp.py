@@ -20,7 +20,7 @@ else:
 	nbClicks = 1
 	words = selectedWords.sample(n=nbWords)
 	if st.button('Display a word'):
-		st.write(words.loc[nbClicks, 'mot'])
+		st.write(words.at[nbClicks, 'mot'])
 		nbClicks = nbClicks + 1
 		if nbClicks == nbWords:
 			st.write('No more words')
