@@ -11,9 +11,8 @@ levels = df.niveau.unique()
 checkboxes = [st.checkbox(l) for l in levels]
 levels = pd.DataFrame({"niveau":levels})
 selectedCheckboxes = [x for x, z in enumerate(checkboxes) if z == True] 
-st.write(selectedCheckboxes)
 selectedLevels = levels.iloc[selectedCheckboxes]
-st.write(selectedLevels)
 selectedWords = df.merge(selectedLevels, on='niveau')
+selectedWords = selectedWords.sample(frac = 1)
 st.write(selectedWords)
 
