@@ -13,6 +13,7 @@ levels = pd.DataFrame({"niveau":levels})
 selectedCheckboxes = [x for x, z in enumerate(checkboxes) if z == True] 
 st.write(selectedCheckboxes)
 selectedLevels = levels.iloc[selectedCheckboxes]
+st.write(selectedLevels)
 selectedWords = df.loc[df['niveau'].isin(selectedLevels),:]
 st.write(selectedWords)
 
