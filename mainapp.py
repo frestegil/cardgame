@@ -7,7 +7,7 @@ import time
 def new_word_click(words, timer):
 	st.session_state.word=words.sample(n=1)['mot'].values[0]
 	st.session_state.timer=timer
-	
+	st.session_state.remainingTime=timer
 
 
 st.title('Card game')
@@ -27,7 +27,8 @@ if file != '':
 	# Play
 	st.button('New word', on_click = new_word_click, args = (selectedWords, timer))
 	st.markdown(f'# {st.session_state.word}')
+	st.metric('Remaining time',st.session_state.remainingTime, '-1')
 	for x in range(st.session_state.timer, 0, -1):
-		st.metric('Remaining time',30, x)
+		st.session_state.remainingTime = x
 		time.sleep(1)
 	st.session_state.word = ""
