@@ -15,5 +15,5 @@ if file != '':
 # Play
 	words = selectedWords.sample(n=1)
 	if st.button('New word'):
-		mot = words['mot'][0]
+		mot = words['mot']
 		st.write(mot)
