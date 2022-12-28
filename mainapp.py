@@ -27,8 +27,9 @@ if file != '':
 	# Play
 	st.button('New word', on_click = new_word_click, args = (selectedWords, timer))
 	st.markdown(f'# {st.session_state.word}')
+	st.write('Remaining time')
 	my_bar = st.progress(100)
 	for percent_complete in range(st.session_state.timer):
 		time.sleep(1)
-		rem_time = (st.session_state.timer - percent_complete)/st.session_state.timer
+		rem_time = (st.session_state.timer - percent_complete - 1)/st.session_state.timer
 		my_bar.progress(rem_time)
