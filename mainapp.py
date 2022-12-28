@@ -13,6 +13,10 @@ if file != '':
 	selectedLevels = levels.iloc[selectedCheckboxes]
 	selectedWords = df.merge(selectedLevels, on='niveau')
 	# Play
-	words = selectedWords.sample(n=1)
-	if st.button('New word'):
-		st.write(f'# {words["mot"].values[0]}')
+	st.button('New word',
+		on_click=selectplayer,
+		args=(selectedWords.sample(n=1)['mot'].values[0],30,)):
+
+
+def new_word_click(word, timer):
+	st.write(f'# {word}')
