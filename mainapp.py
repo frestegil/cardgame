@@ -4,12 +4,9 @@ import time
 
 
 
-def new_word_click(words, timer):
-	word = words.sample(n=1)['mot'].values[0]
-	st.write(f'# {word}')
-	for x in range(timer, 0, -1):
-		st.write(f'{x}')
-		time.sleep(1)
+def new_word_click(words):
+	return words.sample(n=1)['mot'].values[0]
+	
 
 
 st.title('Card game')
@@ -25,5 +22,8 @@ if file != '':
 	selectedWords = df.merge(selectedLevels, on='niveau')
 	timer = st.slider("Select a timer",5, 30)
 	# Play
-	st.button('New word', on_click = new_word_click, args = (selectedWords, timer))
-
+	word = st.button('New word', on_click = new_word_click, args = (selectedWords))
+	st.write(f'# {word}')
+	for x in range(timer, 0, -1):
+		st.write(f'{x}')
+		time.sleep(1)
