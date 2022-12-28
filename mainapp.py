@@ -28,6 +28,6 @@ if file != '':
 	st.button('New word', on_click = new_word_click, args = (selectedWords, timer))
 	st.markdown(f'# {st.session_state.word}')
 	for x in range(st.session_state.timer, 0, -1):
-		st.metric(x)
+		st.metric('Remaining time',30, x)
 		time.sleep(1)
 	st.session_state.word = ""
