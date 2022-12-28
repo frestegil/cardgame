@@ -10,5 +10,6 @@ if file != '':
 levels = df.niveau.unique()
 checkboxes = [st.checkbox(l) for l in levels]
 st.write(checkboxes)
+st.write(levels)
 filtered_words = df.loc[df['niveau'].isin(checkboxes),:]
 st.write(filtered_words)
