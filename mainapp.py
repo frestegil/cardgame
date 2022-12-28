@@ -8,6 +8,6 @@ if file != '':
 	df = pd.read_csv(file, sep=";")
 	st.write (df.head())
 levels = df.niveau.unique()
-checkboxes = [st.checkbox(l)) for l in levels]
+checkboxes = [st.checkbox(l) for l in levels]
 filtered_words = df.loc[df['niveau'].isin(checkboxes),:]
 st.write(filtered_words)
