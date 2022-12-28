@@ -9,9 +9,10 @@ if file != '':
 	# st.write (df.head())
 levels = df.niveau.unique()
 checkboxes = [st.checkbox(l) for l in levels]
-print(checkboxes)
-selectedCheckboxes = [x for x, z in enumerate(checkboxes) if z == True] 
 
+selectedCheckboxes = [x for x, z in enumerate(checkboxes) if z == True] 
 st.write(selectedCheckboxes)
-st.write(levels.iloc[:,selectedCheckboxes])
+selectedLevels = levels.iloc[selectedCheckboxes]
+selectedWords = df.loc[df['niveau'].isin(selectedLevels),:]
+st.write(selectedWords)
 
