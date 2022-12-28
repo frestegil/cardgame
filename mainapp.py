@@ -19,6 +19,7 @@ if nbWords > selectedWords.shape[0]:
 else:
 	nbClicks = 1
 	words = selectedWords.sample(n=nbWords)
+	st.write(words)
 	if st.button('Display a word'):
 		st.write(words.at[nbClicks, 'mot'])
 		nbClicks = nbClicks + 1
