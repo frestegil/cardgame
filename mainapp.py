@@ -14,6 +14,7 @@ if file != '':
 	selectedWords = df.merge(selectedLevels, on='niveau')
 # Play
 	words = selectedWords.sample(n=1)
+	print(words)
 	if st.button('New word'):
-		mot = words.at(0,'mot')
+		mot = words.at(1,'mot')
 		st.write(mot)
