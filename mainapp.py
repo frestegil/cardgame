@@ -26,7 +26,7 @@ if file != '':
 	timer = st.slider("Select a timer",5, 30)
 	# Play
 	st.button('New word', on_click = new_word_click, args = (selectedWords, timer))
-	st.markdown(f'# {st.session_state.word}')
+	st.info(f'{st.session_state.word}')
 	st.write('Remaining time')
 	my_bar = st.progress(100)
 	for percent_complete in range(st.session_state.timer):
