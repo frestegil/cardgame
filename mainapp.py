@@ -6,8 +6,9 @@ file = st.file_uploader('Select file to upload')
 df = pd.DataFrame({"caterogie": [], "niveau": [], "mot":[]})
 if file != '':
 	df = pd.read_csv(file, sep=";")
-	st.write (df.head())
+	# st.write (df.head())
 levels = df.niveau.unique()
 checkboxes = [st.checkbox(l) for l in levels]
+st.write(checkboxes)
 filtered_words = df.loc[df['niveau'].isin(checkboxes),:]
 st.write(filtered_words)
