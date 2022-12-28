@@ -15,7 +15,3 @@ selectedCheckboxes = [x for x, z in enumerate(lst) if z == true]
 st.write(selectedCheckboxes)
 st.write(levels.iloc[:,selectedCheckboxes])
 
-
-selectedLevels = levels.iloc[:,checkboxes]
-filtered_words = df.loc[df['niveau'].isin([x for x in checkboxes if x = true]),:]
-st.write(filtered_words)
