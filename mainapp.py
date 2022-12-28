@@ -14,7 +14,7 @@ if file != '':
 	selectedWords = df.merge(selectedLevels, on='niveau')
 	
 	# Play
-	st.button('New word', on_click=new_word_click, args=(selectedWords, 30,)):
+	st.button('New word', on_click=new_word_click, args=(selectedWords, 30)):
 
 
 def new_word_click(words, timer):
