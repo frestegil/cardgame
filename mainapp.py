@@ -34,4 +34,5 @@ if file != '':
 		rem_time = (st.session_state.timer - percent_complete - 1)/st.session_state.timer
 		my_bar.progress(rem_time)
 	my_bar.progress(0)
+	st.session_state.word=''
 	st.write('Time out')
